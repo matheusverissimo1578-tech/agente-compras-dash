@@ -11,3 +11,17 @@ Sistema automatizado composto por um agente de Inteligência Artificial e um Das
 1. Aceda ao painel interativo.
 2. Carregue o ficheiro `.csv` contendo as propostas (colunas: Produto, Qtd, Fornecedor).
 3. Analise os gráficos e copie os Pedidos de Compra gerados.
+
+mermaid
+## Fluxo de Decisão do Agente
+
+```mermaid
+graph TD
+    A[Upload de Planilha CSV] --> B[Extrator Padrão Norte]
+    B --> C{Motor de Análise IA}
+    C -->|Avalia trade-off| D[Menor Preço Global]
+    C -->|Avalia fracionamento| E[Valor Adjudicado por Item]
+    D --> F[Dashboard de Resultados]
+    E --> F
+    F --> G[Geração de Pedido de Compra PO]
+    F --> H[Gráficos de Economia Total]
